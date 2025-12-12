@@ -1,0 +1,440 @@
+/* ================================
+   ORIGINAL LOGIN / REGISTER / ETC CSS
+================================ */
+
+.Loginpage,.Registerpage, .welcome, .dashboard{
+    align-items: center;
+    width: 100%;
+    height:100vh;
+    background:radial-gradient(grey,black);
+    color: rgb(153, 204, 249);
+}
+
+.card {
+  margin: 20px;
+  border-radius:30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px rgba(118, 193, 239, 1);
+  transform: translateY(-5px);
+}
+
+/* Registerpage */
+.fullinputs{
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+}
+
+.inputs{
+  border-radius: 20px;
+  box-shadow: skyblue 2px 2px 4px 4px;
+  background:radial-gradient(grey,black);
+  width: 70%;
+  padding-top: 10px;
+  list-style-type: none;
+}
+
+.input{
+  box-shadow:1px aliceblue;
+  border: none;
+  border-radius: 10px;
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.inputname{
+  background:radial-gradient(grey,black);
+  margin-top: 20px;
+  margin-left:35%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 30%;
+  padding: 10px;
+}
+
+/* LOGIN PAGE */
+.Loginpage{
+  align-items: center;
+  width: 100%;
+  height:100vh;
+  background:radial-gradient(grey,black);
+  color: rgb(90, 246, 171);
+}
+
+.logininputs{
+  border-radius: 20px;
+  box-shadow: rgb(1, 44, 32) 2px 2px 2px 4px;
+  background:radial-gradient(grey,black);
+  width: 70%;
+  padding-top: 10px;
+  list-style-type: none;
+}
+
+.logininput{
+  box-shadow:1px aliceblue;
+  border: none;
+  border-radius: 10px;
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  transition: 0.3s;
+  list-style-type: none;
+}
+
+.logininputname{
+  list-style-type: none;
+  background:radial-gradient(grey,black);
+  margin-top: 20px;
+  margin-left:35%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 30%;
+  padding: 10px;
+}
+
+/* 🌟 Glass Navbar (FIXED HEIGHT REMOVED) */
+.glass-navbar {
+  background: linear-gradient(180deg,
+    rgba(16, 74, 100, 0.5),
+    rgb(4, 4, 5),
+    rgba(6, 10, 15, 0.7)
+  );
+  backdrop-filter: blur(15px);
+  min-height: 60px;     /* FIX */
+  height: auto;         /* FIX */
+  padding: 10px 15px;   /* FIX */
+  box-shadow: black 0px 4px 6px 0px;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;        /* FIX */
+}
+
+/* ================================
+   FIXED HEADER (FINAL VERSION)
+================================ */
+
+.custom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;       /* FIX */
+  row-gap: 10px;         /* FIX */
+  padding: 8px 15px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Hamburger hidden on desktop */
+.header-hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.header-menu {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;       /* FIX */
+}
+
+.header-menu.open {
+  display: block;
+}
+
+.nav-text {
+  text-decoration: none;
+  color: #eaeaea !important;
+  transition: 0.3s;
+}
+
+.nav-text:hover {
+  color: #00eaff !important;
+}
+
+
+/* ================================
+   Dashboard layout
+================================ */
+
+.sidecon{
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+/* Sidebar */
+.sidebar{
+  margin-top: calc(50px + 10px);   /* FIX — Header height adjust */
+  height: 100vh;
+  overflow: auto;
+  background: linear-gradient(90deg,
+    rgba(26, 75, 98, 0.5),
+    rgb(4, 4, 5),
+    rgba(6, 10, 15, 0.7)
+  );
+  width: 15%;
+  transition: all 0.35s ease-in-out;
+}
+
+.content{
+  width: 90%;
+  height:100vh;
+  margin-top: calc(50px + 10px);   /* FIX — Same header spacing */
+  background:radial-gradient(grey,black);
+  color: aliceblue;
+  overflow: auto;
+}
+
+
+.sidelink{
+  text-decoration: none;
+  margin:40px;
+}
+
+.sideli{
+  margin-top:0px;
+  padding: 0px;
+}
+
+
+/* ================================
+   EMPLOYEES TABLE
+================================ */
+
+table{
+  width: 100%;
+  height:fit-content;
+  border: 2px solid aliceblue;
+  box-shadow: 0 5px 13px 4px rgba(118, 193, 239, 1);
+  background: linear-gradient(75deg,
+    rgba(26, 75, 98, 0.5),
+    rgb(4, 4, 5),
+    rgba(6, 10, 15, 0.7)
+  );
+}
+thead tr{
+  color: #00eaff;
+  border: 3px solid aliceblue;
+}
+
+th,td{
+  padding: 20px;
+}
+
+tbody td{
+  color:rgb(222, 237, 250);
+  border: 1px solid rgb(94, 170, 237);
+}
+
+/* HEADER ZOOM FIX */
+.nav-left,
+.nav-links {
+  flex-wrap: wrap;
+}
+
+.logout-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.Addemployee {
+  width: 90%;
+  min-height: 600px;
+  margin: auto;
+  padding: 20px;
+  background: radial-gradient(rgb(98, 97, 97), black);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.AddEmpAllInputs {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.AddEmpInputRow {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.AddEmpLabel {
+  width: 20%;
+  padding: 10px;
+  background:radial-gradient(grey,black);
+  border-radius: 8px;
+  text-align: right;
+  color: #fff;
+}
+
+.AddEmpInputRow input,
+.AddEmpInputRow select {
+  width: 80%;
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: inset 0 0 5px rgba(249, 247, 247, 0.5);
+  background:rgba(246, 248, 248, 0.954);
+  color: black;
+  transition: all 0.3 ease-in-out;
+}
+.AddEmpInput:hover {
+  border-color: #00eaff;
+  box-shadow: 0 0 8px rgba(6, 239, 91, 10);
+}
+
+.AddEmpInput:focus {
+  border-color: #4ade80;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
+}
+
+.postEmpBtn {
+  width: 40%;
+  margin-top: 20px;
+  align-self: center;
+}
+
+
+.Deletebtn, .Editbtn{
+  margin:2%;
+}
+
+.search{
+display: flex;
+text-align: center;
+justify-content: center;
+margin-bottom: 20px;
+  background:radial-gradient(rgb(39, 39, 43),rgb(86, 85, 85),rgb(39, 39, 43));
+}
+.search label{
+  margin: 10px;
+}
+.search input{
+  margin: 5px;
+  width:35%;
+  border: none;
+  border-radius:10rem;
+}
+.sort{
+  border: none;
+  border-radius:20px;
+
+}
+.chart {
+  width:100%;
+  height: 400px;
+  background: #1a1a1a;   /* Dark dashboard style */
+  padding: 20px;
+  border-radius: 12px;
+}
+.cards{
+  width: 100%;
+}
+
+
+
+
+
+
+
+/* ================================
+   ALL RESPONSIVE DESIGNS 
+================================ */
+
+   /* MOBILE SIDEBAR (FULL WIDTH) */
+
+@media (max-width: 800px) {
+
+  .sidecon {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    height: auto;
+  }
+
+  .content {
+    width: 100% !important;
+    margin-top: 0;
+  }
+}
+/* Sidebar hover (PC only) */
+@media (min-width: 801px) {
+  .sidebar:hover {
+    width: 20%;
+  }
+}
+/* MOBILE MENU */
+@media (max-width: 800px) {
+
+  .header-hamburger {
+    display: block;
+  }
+
+  .header-menu {
+    display: none;
+    position: absolute;
+    top: 70px;         /* FIX because navbar is taller now */
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.85);
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .header-menu.open {
+    display: block;
+  }
+
+  .header-menu a {
+    display: block;
+    padding: 10px 0;
+  }
+}
+/* ================================
+   SMALL DEVICE INPUT FIX
+================================ */
+
+@media (max-width: 600px) {
+
+  .input, .logininput {
+    width: 80% !important;
+  }
+
+  .inputname, .logininputname {
+    width: 70% !important;
+    margin-left: 15% !important;
+  }
+
+  .inputs, .logininputs {
+    width: 90% !important;
+  }
+}
+@media (max-width: 1400px) {
+  .nav-links {
+    gap: 10px;
+  }
+}
