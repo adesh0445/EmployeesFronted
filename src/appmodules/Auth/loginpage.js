@@ -5,6 +5,9 @@ import axios from "axios";
 function Loginpage() {
   const [username,setusername]=useState("")
   const [password,setpassword]=useState("")
+const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
+
+
   const navigate = useNavigate();
   const userchange=(e)=>{
     setusername(e.target.value);
@@ -14,7 +17,7 @@ function Loginpage() {
   }
   const handleLogin = ()=>{
       const userData = {username,password}
-      axios.post("http://localhost:9800/Loginpage",userData).then((res)=>{
+      axios.post(`${API}/Loginpage`,userData).then((res)=>{
           if(res.data.status===450){
             alert(res.data.message)
           }

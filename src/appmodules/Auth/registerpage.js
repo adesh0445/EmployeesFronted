@@ -14,10 +14,11 @@ function Registerpage() {
   const passchange = (e)=>{
     setpassword(e.target.value);
   }
+const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
 
   const handleRegister = ()=>{
     const userData = {username,password}
-    axios.post("http://localhost:9800/Registerpage",userData).then((res)=>{
+    axios.post(`${API}/Registerpage`,userData).then((res)=>{
       if(res.data.status===450){
         alert(res.data.message)
       }
