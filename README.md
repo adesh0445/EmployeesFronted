@@ -5,6 +5,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+   GIT DO IT
+git remote -v ==== Check connection github repository with project
+
+            Create connection with github repository
+git init === start karne ke liye
+git remote add origin https://github.com/adesh0445/adeshreact 
+ git config --global user.email "gmail" === connect email
+  git config --global user.name "Your Name" === connect name
+
+            THIS THREE STEPS DAILY USE FOR GIVE DATA ON GITHUB REPOSITORY
+(1) git add --all ==== All new update data add in project and repo..
+(2) git commit -m "write update" === kya change kiya isme ye likhna
+(3) git push origin master === data send on github repository
 
 ### `npm start`
 

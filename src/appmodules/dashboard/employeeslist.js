@@ -8,17 +8,18 @@ function Employeeslist() {
   const [Employees, setEmployees] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [sortType, setSortType] = useState("new");
+  const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
 
   const EmployeesShow = () => {
     const token = localStorage.getItem("token")
-    axios.get("http://localhost:9800/Employeeslist",{headers:{Authorization:`Bearer ${token}`}}).then((res) => {
+    axios.get(`${API}/Employeeslist`,{headers:{Authorization:`Bearer ${token}`}}).then((res) => {
       setEmployees(res.data.Employeeslist);
     });
   };
 
   const handleDelete = (EmpId) => {
     const token = localStorage.getItem("token")
-    axios.delete(`http://localhost:9800/Employeesdelete/${EmpId}`,{headers:{Authorization:`Bearer ${token}`}}).then((res) => {
+    axios.delete(`${API}/Employeesdelete/${EmpId}`,{headers:{Authorization:`Bearer ${token}`}}).then((res) => {
       alert(res.data.message);
       if (res.data.status === 250) {
         EmployeesShow();

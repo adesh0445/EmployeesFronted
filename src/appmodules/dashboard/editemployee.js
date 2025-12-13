@@ -7,6 +7,7 @@ function Editemployee() {
   const [fullname, setfullname] = useState("");
   const [phone, setphone] = useState("");
   const [email, setemail] = useState("");
+  const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ function Editemployee() {
 
   // ⭐ LOAD OLD EMP DATA
   useEffect(() => {
-    axios.get(`http://localhost:9800/Employees/${id}`, {
+    axios.get(`${API}/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((res) => {
@@ -27,13 +28,13 @@ function Editemployee() {
       .catch(() => {
         alert("Employee Not Found");
       });
-  }, [id, token]);
+  }, [id, token,API]);
 
   // ⭐ SAVE EDITED DATA
   const Edit = () => {
     const EmployeeData = { fullname, phone, email };
 
-    axios.put(`http://localhost:9800/Employeesupdate/${id}`, EmployeeData, {
+    axios.put(`${API}/${id}`, EmployeeData, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((res) => {

@@ -6,10 +6,13 @@ function EmployeesProvider({ children }) {
 
   const [employees, setEmployees] = useState([]);
 
+const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
+
+
   const loadEmployees = () => {
     const token = localStorage.getItem("token");
 
-    axios.get("http://localhost:9800/Employeeslist", { headers: { Authorization: `Bearer ${token}` } })
+    axios.get(`${API}/Employeeslist`, { headers: { Authorization: `Bearer ${token}` } })
     .then((res) => {
       setEmployees(res.data.Employeeslist);
     })

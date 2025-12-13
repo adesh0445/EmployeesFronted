@@ -19,12 +19,14 @@ function Addemployee() {
   const jobtypeChange = (e) => setjobtype(e.target.value);
   const genderChange = (e) => setgender(e.target.value);
 
+const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
+
   const postEmployee = () => {
     const token = localStorage.getItem("token");
     const employeedata = { fullname, phone, email, jobtype, salary, gender };
 
     axios
-      .post("http://localhost:9800/Addemployee", employeedata, {
+      .post(`${API}/Addemployee`, employeedata, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {

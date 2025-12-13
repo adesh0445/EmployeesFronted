@@ -5,8 +5,11 @@ import axios from 'axios';
 
 function Welcome() {
   const [appmenu, setappmenu] = useState([]);
+const API = process.env.BACKEND_API || "http://localhost:9800";
+
+
   const appApi = () => {
-    axios.get(`http://localhost:9800/applist`).then((res) => {
+    axios.get(`${API}/applist`).then((res) => {
       setappmenu(res.data.applist);
     });
   };
