@@ -16,9 +16,10 @@ const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
     .then((res) => {
       setEmployees(res.data.Employeeslist);
     })
-    .catch(() => {
-      alert("Failed to load employees");
-    });
+    .catch((err) => {
+  console.error("EMP API ERROR:", err.response?.data || err.message);
+});
+
   };
 
   useEffect(() => {
