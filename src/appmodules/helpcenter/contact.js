@@ -19,12 +19,12 @@ const message = "Hello, I want to contact you";
 </div>
 
         <div className="contact-item phone">
-          <span>Git Hub Link</span>
+          <span>Git</span>
           <a href="https://github.com/adesh0445" className="text-decoration-none" target="_blank" rel="noopener noreferrer"><h2>Git Link</h2></a>
         </div>
 
         <div className="contact-item email">
-          <span>Email</span>
+          <span>Email Id</span>
           <h2>officialadesh0001@gmail.com</h2>
         </div>
 
