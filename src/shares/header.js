@@ -28,9 +28,9 @@ function Header() {
 
       {/* Desktop + Mobile menu */}
       <div className={`header-menu ${menuOpen ? "open" : ""}`}>
-        <Link to="/" className="nav-text"><h4>Home</h4></Link>
-        <Link to="/" className="nav-text"><h4>About</h4></Link>
-        <Link to="/Login" className="nav-text"><h4>Login Another</h4></Link>
+        <Link to="/" className="nav-text">Home</Link>
+        <Link to="/Contact" className="nav-text">Contact</Link>
+        <Link to="/Login" className="nav-text">Login Another</Link>
       </div>
 
       <button className="btn bg-danger logout-btn" onClick={handleLogout}>

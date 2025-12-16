@@ -75,7 +75,7 @@ function Editemployee() {
         <div className="row text-center">
           <div className="col-md-12 fullinputs">
             <div className="AddEmpAllInputs">
-              <li className="AddEmpInputName">
+              <li className="editli">
                 <h3>Full Name</h3>
               </li>
               <li>
@@ -86,7 +86,7 @@ function Editemployee() {
                 />
               </li>
 
-              <li className="AddEmpInputName">
+              <li className="editli">
                 <h3>Phone</h3>
               </li>
               <li>
@@ -97,7 +97,7 @@ function Editemployee() {
                 />
               </li>
 
-              <li className="AddEmpInputName">
+              <li className="editli">
                 <h3>Email</h3>
               </li>
               <li>

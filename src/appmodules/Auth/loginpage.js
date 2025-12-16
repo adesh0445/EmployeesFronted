@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 function Loginpage() {
   const [username,setusername]=useState("")
@@ -25,9 +26,12 @@ const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
             alert(res.data.message)
           }
           if(res.data.status===250){
-            alert(res.data.message)
+          toast.success(res.data.message, { position: "top-right", autoClose: 2500, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "dark", });
             localStorage.setItem("token",res.data.token)
-            navigate("/Dashboard")
+
+            setTimeout(() => {
+              navigate("/Dashboard")
+            }, 2000);
           }
       })
       }
@@ -36,7 +40,7 @@ const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
       <div className="container-fluid Loginpage">
         <h1 className="col-md-12 text-center">Loginpage</h1>
         <div className="row text-center">
-          
+          <ToastContainer/>
       <div className='col-md-12 fullinputs'>
             <div className='logininputs'>
           <li className='logininputname'><h3>Username</h3></li>

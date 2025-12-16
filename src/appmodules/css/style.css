@@ -258,7 +258,7 @@ tbody td{
   width: 90%;
   min-height: 600px;
   margin: auto;
-  padding: 20px;
+  padding: 25px;
   background: radial-gradient(rgb(98, 97, 97), black);
   border-radius: 12px;
   color: #fff;
@@ -271,54 +271,103 @@ tbody td{
   margin: 0;
 }
 
+.AddEmpSectionTitle {
+  width: 100%;
+  margin: 25px 0 15px;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  background: radial-gradient(grey, black);
+  border-radius: 8px;
+}
+
 .AddEmpInputRow {
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   gap: 15px;
 }
 
 .AddEmpLabel {
-  width: 20%;
+  width: 22%;
   padding: 10px;
-  background:radial-gradient(grey,black);
+  background: radial-gradient(grey, black);
   border-radius: 8px;
   text-align: right;
   color: #fff;
+  font-size: 14px;
 }
 
 .AddEmpInputRow input,
 .AddEmpInputRow select {
-  width: 80%;
-  flex: 1;
+  width: 78%;
   padding: 8px 12px;
   border-radius: 8px;
   border: none;
-  box-shadow: inset 0 0 5px rgba(249, 247, 247, 0.5);
-  background:rgba(246, 248, 248, 0.954);
-  color: black;
-  transition: all 0.3 ease-in-out;
-}
-.AddEmpInput:hover {
-  border-color: #00eaff;
-  box-shadow: 0 0 8px rgba(6, 239, 91, 10);
+  background: rgba(246, 248, 248, 0.95);
+  color: #000;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
 }
 
-.AddEmpInput:focus {
-  border-color: #4ade80;
-  box-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
+.AddEmpInputRow input:focus,
+.AddEmpInputRow select:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
 }
 
 .postEmpBtn {
   width: 40%;
-  margin-top: 20px;
-  align-self: center;
+  margin-top: 25px;
 }
 
 
 .Deletebtn, .Editbtn{
   margin:2%;
+}
+
+.ViewEmployee {
+  width: 90%;
+  margin: auto;
+  padding: 25px;
+  background: radial-gradient(rgb(98, 97, 97), black);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.ViewEmpHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ViewEmpPhoto {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #4ade80;
+  margin-bottom: 10px;
+}
+
+.ViewEmpBody {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.ViewSection {
+  background: radial-gradient(grey, black);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.ViewSection h4 {
+  margin-bottom: 10px;
+  color: #4ade80;
+}
+
+.ViewSection p {
+  margin: 5px 0;
 }
 
 .search{
@@ -353,17 +402,103 @@ margin-bottom: 20px;
   width: 100%;
 }
 
+/* FULL PAGE CENTER */
+.contact-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; /* header ke liye */
+}
 
+/* GLASS CARD */
+.contact-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 50px 40px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0, 234, 255, 0.3);
+  animation: fadeUp 1.2s ease;
+}
 
+/* TITLE */
+.contact-title {
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #00eaff;
+  letter-spacing: 2px;
+  animation: glow 2s infinite alternate;
+}
 
+/* ITEM */
+.contact-item {
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
 
+.contact-item span {
+  display: block;
+  font-size: 14px;
+  color: #aaa;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+}
 
+.contact-item h2 {
+  font-size: 26px;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+/* HOVER MAGIC */
+.contact-item:hover {
+  transform: scale(1.08);
+}
+
+.contact-item:hover h2 {
+  color: #00eaff;
+  letter-spacing: 2px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00eaff;
+  }
+  to {
+    text-shadow: 0 0 25px #00eaff;
+  }
+}
 
 /* ================================
    ALL RESPONSIVE DESIGNS 
 ================================ */
 
    /* MOBILE SIDEBAR (FULL WIDTH) */
+   @media (max-width: 576px) {
+  .contact-title {
+    font-size: 32px;
+  }
+  .contact-item h2 {
+    font-size: 20px;
+  }
+}
 
 @media (max-width: 800px) {
 

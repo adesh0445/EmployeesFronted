@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react';
-import { FaTrash, FaEdit } from "react-icons/fa";
+import { FaTrash, FaEdit, FaEye } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 function Employeeslist() {
@@ -105,6 +105,9 @@ function Employeeslist() {
                   <Link className="btn Editbtn btn-success" to={`/Dashboard/Editemployee/${Employee._id}`}>
                     <FaEdit />
                   </Link>
+                  <Link className="btn btn-info mx-1" to={`/Dashboard/Viewemployee/${Employee._id}`} >
+                  <FaEye />
+                </Link>
 
                 </td>
               </tr>
