@@ -465,6 +465,39 @@ margin-bottom: 20px;
   letter-spacing: 2px;
 }
 
+/* SIDEBAR BASE */
+.sidebar-container {
+  background: #212529;
+  width: 250px;
+  height: 100vh;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* MOBILE: HIDDEN */
+@media (max-width: 767px) {
+  .sidebar-container {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    transform: translateY(-100%);
+    z-index: 999;
+    height: auto;
+    width: 100%;
+  }
+
+  .sidebar-container.show {
+    transform: translateY(0);
+  }
+}
+
+/* TOGGLE BAR */
+.sidebar-toggle {
+  background: #212529;
+  cursor: pointer;
+}
+
+
+
 /* ANIMATIONS */
 @keyframes fadeUp {
   from {

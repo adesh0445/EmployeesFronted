@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaUserAlt } from "react-icons/fa";
 
 function Header() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ function Header() {
           className="header-hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          ☰
+          <FaUserAlt></FaUserAlt>
         </button>
 
         <div className="brand-name text-white fw-bold"><h4>Adesh Web</h4></div>

@@ -15,7 +15,7 @@ function Dashboard() {
         </div>
 
         <div className="content">
-          <div className="cont p-3">
+          <div className="cont mt-5 p-3">
             
             <Outlet />
           </div>

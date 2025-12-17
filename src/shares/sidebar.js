@@ -4,15 +4,44 @@ import { Link } from "react-router-dom";
 function Sidebar() {
   return (
     <>
-      <div className="sidebar-container always-open">
-        <div className="text-white fw-bold p-3">Sidebar</div>
+      {/* TOGGLER BUTTON for mobile */}
+      <button
+        className="btn btn-dark d-md-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarMenu"
+        aria-expanded="false"
+        aria-controls="sidebarMenu"
+      >
+        ☰ Menu
+      </button>
 
-        <ul className="list-unstyled ps-3 sideli">
-          <li><Link className="text-white sidelink" to="Employeeslist"><h5>Employees</h5></Link></li>
-          <li><Link className="text-white sidelink" to="Addemployee"><h5>Add Employee</h5></Link></li>
-          <li><Link className="text-white sidelink" to="Recharts"><h5>Chart</h5></Link></li>
-          <li><Link className="text-white sidelink" to="/"><h5>Home</h5></Link></li>
-        </ul>
+      {/* SIDEBAR */}
+      <div className="collapse d-md-block" id="sidebarMenu">
+        <div className="text-white p-3">
+          <ul className="list-unstyled sideli">
+            <li>
+              <Link className="text-white sidelink nav-text" to="/">
+                <h5>Home</h5>
+              </Link>
+            </li>
+            <li>
+              <Link className="text-white sidelink nav-text" to="Employeeslist">
+                <h5>Employees</h5>
+              </Link>
+            </li>
+            <li>
+              <Link className="text-white sidelink nav-text" to="Addemployee">
+                <h5>Add Employee</h5>
+              </Link>
+            </li>
+            <li>
+              <Link className="text-white sidelink nav-text" to="Recharts">
+                <h5>Chart</h5>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );
