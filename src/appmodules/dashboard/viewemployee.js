@@ -9,7 +9,7 @@ function Viewemployee() {
   const emp = employees.find(e => e._id === id);
 
   if (!emp) {
-    return <h3 style={{ color: "#fff" }}>Employee Not Found</h3>;
+    return <h3 style={{ color: "#160f0fff" }}>Employee Not Found</h3>;
   }
 
   return (
