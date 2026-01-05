@@ -7,6 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 function Addemployee() {
 
   /* ================= BASIC INFO ================= */
+  const [employeeId,setEmployeeId] = useState("")
+  const [employeePass,setEmployeePass] = useState("");
   const [fullname, setfullname] = useState("");
   const [phone, setphone] = useState("");
   const [email, setemail] = useState("");
@@ -34,8 +36,7 @@ function Addemployee() {
   const [loading, setloading] = useState(false);
 
   const navigate = useNavigate();
-  const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
-
+const API = process.env.REACT_APP_BACKEND_API && "http://localhost:9800";
   /* ================= PINCODE AUTO ================= */
   const pincodeChange = async (e) => {
     const pin = e.target.value;
@@ -60,7 +61,7 @@ function Addemployee() {
   const token = localStorage.getItem("token");
   setloading(true);
 
-  const employeedata = { fullname, phone, email, gender, dob, jobtype, department, salary, joiningDate, status, address, city, state, pincode, country };
+  const employeedata = { employeeId, employeePass, fullname, phone, email, gender, dob, jobtype, department, salary, joiningDate, status, address, city, state, pincode, country };
 
   axios.post(`${API}/Addemployee`, employeedata, {
     headers: {
@@ -100,6 +101,16 @@ function Addemployee() {
 
           {/* ===== BASIC INFO ===== */}
           <div className="AddEmpSectionTitle">👤 Basic Info</div>
+
+           <li className="AddEmpInputRow">
+            <span className="AddEmpLabel">Create Employee Id</span>
+            <input value={employeeId} onChange={(e)=>setEmployeeId(e.target.value)} placeholder="Create For Login" />
+          </li>
+
+          <li className="AddEmpInputRow">
+            <span className="AddEmpLabel">Create Employee Password</span>
+            <input value={employeePass} onChange={(e)=>setEmployeePass(e.target.value)} placeholder="Create For Login" />
+          </li>
 
           <li className="AddEmpInputRow">
             <span className="AddEmpLabel">Full Name</span>

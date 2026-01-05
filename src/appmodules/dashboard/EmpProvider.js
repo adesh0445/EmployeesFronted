@@ -6,7 +6,7 @@ function EmployeesProvider({ children }) {
 
   const [employees, setEmployees] = useState([]);
 
-const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
+const API = process.env.REACT_APP_BACKEND_API && "http://localhost:9800";
 
 
   const loadEmployees = () => {

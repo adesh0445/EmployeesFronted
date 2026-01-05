@@ -5,7 +5,8 @@ import axios from 'axios';
 
 function Welcome() {
   const [appmenu, setappmenu] = useState([]);
-const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
+     const [textIndex, setTextIndex] = useState(0);  // FOR ANIMATED TEXT
+const API = process.env.REACT_APP_BACKEND_API && "http://localhost:9800";
 
 
   const appApi = () => {
@@ -17,13 +18,33 @@ const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
     appApi();
   }, []);
 
+  const messages = [
+    "Welcome To Adesh Web",
+    "This is an Employee Management System",
+    "Manage Employees, Roles & Attendance",
+    "Secure Login & Easy Registration",
+    "Powered by Adesh Web EMS"
+  ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTextIndex((prev) => (prev + 1) % messages.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Fragment>
       <div className="container-fluid text-center welcome py-5">
         <div className="col-12 mb-4">
-          <h1 className="fw-bold text-primary">Welcome To Adesh Web....</h1>
-        </div>
+        <h3 className='m-4'>
+        {messages[textIndex]}
+        </h3>        </div>
+        
         <div className="row justify-content-center gy-4">
+          <p className="text-light">
+            Please <strong>Login</strong> or <strong>Register</strong> to continue
+          </p>
           {appmenu.map((m, index) => {
             const IconComponent = Icons[m.appicon] || Icons.FaUserAlt;
             return (

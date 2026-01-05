@@ -1,0 +1,24 @@
+ // text animation
+
+   const [textIndex, setTextIndex] = useState(0);
+
+   const messages = [
+    "This is an Employee Management System",
+    "Manage Employees, Roles & Attendance",
+    "Secure Login & Easy Registration",
+    "Powered by Adesh Web EMS"
+  ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTextIndex((prev) => (prev + 1) % messages.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  
+            {messages[textIndex]}
+
+  <p className="text-muted">
+            Please <strong>Login</strong> or <strong>Register</strong> to continue
+          </p>

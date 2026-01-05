@@ -6,7 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 function Loginpage() {
   const [username,setusername]=useState("")
   const [password,setpassword]=useState("")
-const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
+const API = process.env.REACT_APP_BACKEND_API && "http://localhost:9800";
 
 
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
   return (
     <Fragment>
       <div className="container-fluid Loginpage">
-        <h1 className="col-md-12 text-center">Loginpage</h1>
+        <h1 className="col-md-12 text-center">Admin Loginpage</h1>
         <div className="row text-center">
           <ToastContainer/>
       <div className='col-md-12 fullinputs'>

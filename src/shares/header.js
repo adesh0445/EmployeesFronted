@@ -8,7 +8,7 @@ function Header() {
 
  const handleLogout = () => {
   localStorage.removeItem("token");   // ⭐ Token हट गया
-  navigate("/Login");                 // ⭐ Redirect to Login
+  navigate("/");                 // ⭐ Redirect to Login
 };
 
 
@@ -29,7 +29,6 @@ function Header() {
 
       {/* Desktop + Mobile menu */}
       <div className={`header-menu ${menuOpen ? "open" : ""}`}>
-        <Link to="/" className="nav-text">Home</Link>
         <Link to="/Contact" className="nav-text">Contact</Link>
         <Link to="/Login" className="nav-text">Login Another</Link>
       </div>

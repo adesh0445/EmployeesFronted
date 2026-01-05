@@ -8,7 +8,7 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 
 import Welcome from "./welcome";
 import Loginpage from "./appmodules/Auth/loginpage";
-import Registerpage from "./appmodules/Auth/registerpage";
+// import Registerpage from "./appmodules/Auth/registerpage";
 import Dashboard from "./appmodules/dashboard/dashboard";
 import Employeeslist from "./appmodules/dashboard/employeeslist";
 import Addemployee from "./appmodules/dashboard/addemployee";
@@ -19,6 +19,11 @@ import EmployeesProvider from "./appmodules/dashboard/EmpProvider";
 import { Protect } from "./appmodules/dashboard/protect";
 import Contact from "./appmodules/helpcenter/contact";
 import Viewemployee from "./appmodules/dashboard/viewemployee";
+import EmployeeLogin from "./appmodules/Auth/empLogin";
+import EmployeeCheck from "./appmodules/dashboard/EmpDashboard/empDashboard";
+import EmployeeDetails from "./appmodules/dashboard/EmpDashboard/EmpDetails";
+import FindEmpForgot from "./appmodules/dashboard/EmpDashboard/FindEmpForgot";
+import ResetEmpPass from "./appmodules/dashboard/EmpDashboard/ResetEmpPass";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -30,11 +35,17 @@ root.render(
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="Login" element={<Loginpage />} />
-          <Route path="Register" element={<Registerpage />} />
+          <Route path="/EmployeeLogin" element={<EmployeeLogin></EmployeeLogin>}></Route>
+          <Route path="FindEmpForgot" element={<FindEmpForgot></FindEmpForgot>}></Route>
+          <Route path="ResetEmpPass/:employeeId" element={<ResetEmpPass />} />
+          <Route path="EmployeeDashboard" element={<EmployeeCheck></EmployeeCheck>}></Route>
+          <Route path="employeeProfile" element={<EmployeeDetails />} />
+          {/* <Route path="Register" element={<Registerpage />} /> */}
           <Route path="/Contact" element={<Contact></Contact>} />
 
           <Route path="Dashboard" element={<Protect><Dashboard /></Protect>}>
             <Route index element={<Landingpage />} />
+            <Route path="Landingpage" element={<Landingpage></Landingpage>}></Route>
             <Route path="Employeeslist" element={<Employeeslist />} />
             <Route path="Addemployee" element={<Addemployee />} />
             <Route path="Editemployee/:id" element={<Editemployee />} />

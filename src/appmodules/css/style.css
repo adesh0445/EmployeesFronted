@@ -162,6 +162,7 @@
   text-decoration: none;
   color: #eaeaea !important;
   transition: 0.3s;
+  font-weight:bold;
 }
 
 .nav-text:hover {
@@ -325,7 +326,11 @@ tbody td{
 .Deletebtn, .Editbtn{
   margin:2%;
 }
+.edit-template{
+    background: radial-gradient(rgb(74, 121, 113), rgb(45, 69, 70));
 
+
+}
 .ViewEmployee {
   width: 90%;
   margin: auto;
@@ -519,6 +524,26 @@ margin-bottom: 20px;
   }
 }
 
+.EmployeeDashboard{
+    width:100%;
+  min-height:100vh;
+  background: radial-gradient(rgb(98, 97, 97), black);
+  color: #fff;
+}
+.Find{
+  color: white;
+}
+.Findbtn{
+  border: none;
+  border-radius: 10px;
+  color: aliceblue;
+  transition: all 0.2s ease-in-out;
+}
+.Findbtn:hover{
+  box-shadow:3px 4px 4px 2px skyblue;
+  font-size: large;
+}
+
 /* ================================
    ALL RESPONSIVE DESIGNS 
 ================================ */
@@ -606,3 +631,37 @@ margin-bottom: 20px;
     gap: 10px;
   }
 }
+/* ===== DESKTOP / LAPTOP VIEW ===== */
+@media (min-width: 992px) {
+  .AddEmpAllInputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .AddEmpSectionTitle {
+    flex: 0 0 100%;
+  }
+
+  .AddEmpInputRow {
+    width: 32%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .AddEmpLabel {
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .AddEmpInputRow input,
+  .AddEmpInputRow select {
+    width: 100%;
+  }
+
+  .postEmpBtn {
+    width: 30%;
+  }
+}
+

@@ -7,7 +7,7 @@ export function Protect({ children }) {
 
   if (!token) {
     alert("No Token")
-    return <Navigate to="/Login" />;
+    return <Navigate to="/" />;
   }
   else{
   return children;

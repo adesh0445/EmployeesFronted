@@ -21,8 +21,8 @@ function Sidebar() {
         <div className="text-white p-3">
           <ul className="list-unstyled sideli">
             <li>
-              <Link className="text-white sidelink nav-text" to="/">
-                <h5>Home</h5>
+              <Link className="text-white sidelink nav-text" to="/Dashboard/Landingpage">
+                <h5>Home Page</h5>
               </Link>
             </li>
             <li>

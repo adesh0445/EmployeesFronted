@@ -8,7 +8,7 @@ function Employeeslist() {
   const [Employees, setEmployees] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [sortType, setSortType] = useState("new");
-  const API = process.env.REACT_APP_BACKEND_API || "http://localhost:9800";
+const API = process.env.REACT_APP_BACKEND_API && "http://localhost:9800";
 
   const EmployeesShow = () => {
     const token = localStorage.getItem("token")
